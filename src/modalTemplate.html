@@ -1,0 +1,10 @@
+<div class="container container-fluid">
+  <h3>  {{vm.monster.name}}</h3>
+  <hr />
+  <p>  {{vm.monster.strength}}</p>
+  <p>  {{vm.monster.attack}} </p>
+  <div class="container container-fluid">
+    <button class="btn btn-primary" ng-click ="vm.ok()">The city gets stompted!</button>
+    <button class="btn btn-delete" ng-click="vm.cancel()">The city fights back.</button>
+   </div>
+</div>

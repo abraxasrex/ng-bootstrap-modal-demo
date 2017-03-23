@@ -1,0 +1,20 @@
+{
+  "name": "bootstrap-modal-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "start": "concurrently \"npm run tsc:w\" \"npm run lite\" "
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/angular": "^1.6.10",
+    "@types/angular-ui-bootstrap": "^0.13.41",
+    "@types/angular-ui-router": "^1.1.36",
+    "concurrently": "^3.4.0",
+    "lite-server": "^2.3.0"
+  }
+}

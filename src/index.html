@@ -1,0 +1,26 @@
+<html>
+    <head>
+    <title> bootstrap modal </title>
+      <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body ng-app="modalApp">
+      <div ng-controller="modalOpener as vm">
+       <div class="jumbotron">
+         <h3> Hello {{vm.message}}   Welcome to the App That Stomped On The World. </h3>
+        </div>
+
+        <div ng-repeat="monster in vm.monsters">
+           <p> {{monster.name}} </p>
+           <button class="btn btn-success" ng-click="vm.openModal(monster)">monster info</button>
+           <hr />
+       <div>
+
+      </div>
+    <script src="lib/angular/angular.js"></script>
+    <!--<script src="lib/angular-animate/angular-animate.js"></script>-->
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app.js"></script>
+    </body>
+    
+</html>
