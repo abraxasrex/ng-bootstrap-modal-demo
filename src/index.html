@@ -8,7 +8,7 @@
 
        <div class="jumbotron">
          <h3> Hello {{vm.message}}   Welcome to the App That Stomped On The World. </h3>
-        </div>
+       </div>
 
          <div class="row">
            <h3> {{vm.queryType }} </h3>
@@ -58,6 +58,7 @@
          <!-- seasons -->
          <p ng-show="vm.queryType == 'seasons' "> Season {{show.number }} </p>
 
+         <p> rating: {{ vm.show.rating.average }} </p>
          <button class="btn btn-primary" ng-click="vm.openModal(show)"> deets </button>
          <hr />
        </div>

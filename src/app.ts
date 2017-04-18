@@ -44,13 +44,27 @@ namespace ModalApp {
         }
 
         public shows;
-        public apiQuery;
+        public apiQuery; //show id
+        public show; // entire show!
+        public getRating(){
+          console.log(this.apiQuery);
+            this.$http.get('http://api.tvmaze.com/shows/' + this.apiQuery)
+            .then((show)=>{
+              this.show = show.data;
+            }).catch((err)=> { console.log(err); });
+        }
 
         public searchAPI(){
         //  console.log('query:', this.apiQuery);
-          let query = this.apiQuery || '42';
+        if(!this.apiQuery){
+          this.apiQuery = '42';
+        }
+          let query = this.apiQuery;
+
           this.$http.get('http://api.tvmaze.com/shows/' + query + '/' + this.queryType).then((results)=>{
             this.shows = results.data;
+            //future refactor: if this needs to change, change it ....
+            this.getRating();
           }).catch( (err)=>{ console.log(err); });
         }
         //TODO:
@@ -58,7 +72,8 @@ namespace ModalApp {
         // 1. use uib dropdown to select episodes, cast, seasons endpoints XXX
         // 2. use modal to inspect individual object XXX
         // 3  make it look nice enough XXX
-        
+
+
         //TODO bonus:
         // 0. orderBy / sort
         // 1. figure out custom filters
@@ -79,7 +94,6 @@ namespace ModalApp {
             this.queryType = 'episodes';
             // episodes, seasons, cast
             this.searchAPI();
-
             this.message = ' World!';
         }
     }

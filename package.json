@@ -16,5 +16,9 @@
     "@types/angular-ui-router": "^1.1.36",
     "concurrently": "^3.4.0",
     "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "@types/es6-promise": "0.0.32",
+    "beepbeep": "^1.2.1"
   }
 }
