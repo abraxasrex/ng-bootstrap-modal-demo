@@ -6,7 +6,7 @@
   "scripts": {
     "tsc:w": "tsc -w",
     "lite": "lite-server",
-    "start": "concurrently \"npm run tsc:w\" \"npm run lite\" "
+    "start": "concurrently \"npm run tsc:w\" \"node server.js\" "
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@types/es6-promise": "0.0.32",
-    "beepbeep": "^1.2.1"
+    "express": "^4.15.2",
+    "morgan": "^1.8.1"
   }
 }
