@@ -1,10 +1,28 @@
-<div class="container container-fluid">
-  <h3>  {{vm.monster.name}}</h3>
+
+<!--
+episodes ==>> name, airdate, runtime, image.medium, summary
+cast => person.name, person.image.medium, character.name
+seasons ==> number, premiereDate, image.medium
+-->
+
+<div class="container">
+  <h3 ng-show="vm.queryType == 'episodes' ">  {{vm.show.name}} </h3>
+  <h3 ng-show="vm.queryType == 'cast' ">  {{vm.show.person.name}} </h3>
+  <h3 ng-show="vm.queryType == 'seasons' ">  {{vm.show.number}} </h3>
+
   <hr />
-  <p>  {{vm.monster.strength}}</p>
-  <p>  {{vm.monster.attack}} </p>
-  <div class="container container-fluid">
-    <button class="btn btn-primary" ng-click ="vm.ok()">The city gets stompted!</button>
-    <button class="btn btn-delete" ng-click="vm.cancel()">The city fights back.</button>
-   </div>
+
+<img ng-show="vm.queryType == 'episodes' " ng-src = "{{ vm.show.image.medium }}" />
+<img ng-show="vm.queryType == 'cast' " ng-src = "{{ vm.show.person.image.medium }}" />
+<img ng-show="vm.queryType == 'seasons' " ng-src = "{{ vm.show.image.medium }}" />
+
+
+ <div class="container">
+     <div class="row ">
+       <div class="col-md-12 col-sm-12">
+        <button class="btn btn-primary" ng-click ="vm.ok()">The city gets stompted!</button>
+        <button class="btn btn-delete" ng-click="vm.cancel()">The city fights back.</button>
+    </div>
+    </div>
+  </div>
 </div>
